@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <!-- get => not the best solution because data will appears in the url -->
+
+    <form action="thankyou.html" method="get">
+      <!-- hidden id -->
+      <input type="hidden" name="userId" value="12345" />
+
+      <!-- tabindex: order of the elements which can be navigated to with the tab key -->
+      <!-- accesskey: keyboard shortcut to activate the element
+            in windows: alt + accesskey -->
+
+      <!-- first name -->
+      <label>
+        First Name:
+        <input type="text" name="fname" required tabindex="1" accesskey="f" />
+      </label>
+      <br />
+      <br />
+
+      <!-- last name -->
+      <label>
+        Last Name:
+        <input type="text" name="lname" required tabindex="2" accesskey="l" />
+      </label>
+      <br />
+      <br />
+
+      <!-- email -->
+      <label>
+        Email:
+        <input type="email" name="email" required tabindex="3" accesskey="e" />
+      </label>
+      <br />
+      <br />
+      <label>
+        Password:
+        <input type="password" name="password" required tabindex="4" />
+      </label>
+      <br />
+      <br />
+
+      <label>
+        Repeat Password:
+        <input type="password" name="repassword" required tabindex="5" />
+      </label>
+      <br />
+      <br />
+
+      <!-- birth Date -->
+      <label>
+        Birth Date:
+        <input type="date" name="birthdate" tabindex="6" />
+      </label>
+      <br />
+      <br />
+
+      <!-- user pic -->
+      <label>
+        User Picture:
+        <input type="file" name="picture" accept="image/*" tabindex="7" />
+      </label>
+      <br />
+      <br />
+
+      <!-- gender -->
+      Gender:
+      <label>
+        <input type="radio" name="gender" value="male" tabindex="8" /> Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female" /> Female
+      </label>
+      <br />
+      <br />
+
+      <!-- faculty -->
+      <label>
+        Faculty:
+        <select name="faculty" tabindex="9">
+          <option value="">Select Faculty</option>
+          <option value="cs">Computer Science</option>
+          <option value="medical">Medical</option>
+          <option value="engineering">Engineering</option>
+        </select>
+      </label>
+      <br />
+      <br />
+
+      <!-- interests -->
+      <fieldset>
+        <legend>Interests</legend>
+        <label>
+          <input type="checkbox" name="interests" value="programming" />
+          Programming </label
+        ><br />
+        <label>
+          <input type="checkbox" name="interests" value="reading" />
+          Reading </label
+        ><br />
+        <label>
+          <input type="checkbox" name="interests" value="swimming" /> Games
+        </label>
+      </fieldset>
+      <br />
+
+      <!-- about you -->
+      <label>
+        About You:
+        <br />
+        <textarea name="about" rows="4" cols="40" tabindex="10"></textarea>
+      </label>
+      <br />
+      <br />
+
+      <!-- terms -->
+      <label>
+        <input type="checkbox" name="terms" required tabindex="11" />
+        I agree to
+        <a href="terms.html" target="_blank">terms and conditions</a>
+      </label>
+      <br />
+      <br />
+
+      <!-- Buttons -->
+      <input type="submit" value="Submit" tabindex="12" accesskey="s" />
+      <input type="reset" value="Reset" tabindex="13" />
+    </form>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <hr />
+
+    <div>
+      <h2>Difference between get and post</h2>
+
+      <p>
+        get: when you click on the button, the data will be sent to the server
+        and the page will be refreshed. The data will not be saved.
+        <br />get: also when get data from the server
+        <br />
+        post: when you click on the button, the data will be sent to the server
+        and the page will not be refreshed. The data will be saved. <br />post:
+        also when you submit the form
+        <br />
+        <br />
+      </p>
+    </div>
+  </body>
+</html>
