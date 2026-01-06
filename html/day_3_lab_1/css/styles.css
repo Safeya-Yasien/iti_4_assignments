@@ -9,6 +9,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 :root {
   --primary-color: #61794a;
   --primary-color-light: #aac644;
@@ -147,4 +151,131 @@ header {
       }
     }
   }
+}
+
+.insurance {
+  margin: 50px 0;
+  padding: 50px 0;
+  .insurance-inner {
+    display: flex;
+    justify-content: space-between;
+
+    .insurance-left {
+      width: 50%;
+      h2 {
+        color: var(--secondary-color);
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      .insurance-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 25px;
+        li {
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .icon {
+            color: var(--primary-color-light);
+            font-size: 25px;
+          }
+        }
+      }
+      p {
+        margin-bottom: 45px;
+        max-width: 450px;
+        line-height: 1.5;
+      }
+      .insurance-btn {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        padding: 15px;
+        margin: 20px auto 0;
+        width: fit-content;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: var(--primary-color-light);
+          color: var(--black-color);
+        }
+      }
+    }
+
+    .insurance-right {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .img-container {
+        height: 400px;
+        padding: 10px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.info {
+  margin: 50px 0;
+  .info-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .info-card {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 100px 50px;
+      transition: all 0.3s ease;
+      position: relative;
+
+      .icon {
+        margin-bottom: 10px;
+        font-size: 40px;
+      }
+
+      h2 {
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      p {
+        line-height: 1.5;
+      }
+
+      .hover-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        z-index: 1;
+      }
+
+      &:hover {
+        .hover-img {
+          opacity: 1;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+.info-card *:not(.hover-img) {
+  z-index: 2;
 }
