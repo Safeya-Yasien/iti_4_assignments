@@ -5,11 +5,15 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
+a {
+  text-decoration: none;
+}
 
 :root {
   --primary-color: #61794a;
   --primary-color-light: #aac644;
   --white-color: #ffffff;
+  --black-color: #000000;
   --secondary-color: #f8a715;
 }
 
@@ -85,4 +89,62 @@ header {
 
 .nav-link:hover {
   color: var(--primary-color-light);
+}
+
+/* hero */
+.hero {
+  background-image: url(../public/images/hero2.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-overlay {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 70%);
+}
+.hero-inner {
+  position: relative;
+
+  .hero-text {
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h1 {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+
+    .hero-btn {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      padding: 15px;
+      margin: 20px auto 0;
+      width: fit-content;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: var(--primary-color-light);
+        color: var(--black-color);
+      }
+    }
+  }
 }
