@@ -49,6 +49,24 @@ ul {
   max-width: 1200px;
 }
 
+.btn {
+  background-color: var(--primary-color-light);
+  color: var(--white-color);
+  font-weight: bold;
+  font-size: 20px;
+  border: 2px solid transparent;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+
+  &:hover {
+    background-color: transparent;
+    border-color: var(--primary-color-light);
+    color: var(--primary-color);
+  }
+}
+
 header {
   background-color: var(--white-color);
   position: fixed;
@@ -526,4 +544,73 @@ header {
       }
     }
   }
+}
+.contact {
+  .contact-inner {
+    display: flex;
+    gap: 80px;
+
+    .contact-img {
+      width: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .contact-text {
+      width: 50%;
+      .contact-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+
+        .form-group {
+          grid-column: span 2;
+
+          &:nth-of-type(1),
+          &:nth-of-type(2) {
+            grid-column: span 1;
+          }
+
+          .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+          }
+          input,
+          textarea {
+            border: 1px solid #e0e0e0;
+            outline: none;
+            width: 100%;
+            padding: 10px;
+
+            &:focus {
+              border: 1px solid var(--secondary-color);
+            }
+
+            input[type="email"] {
+              width: 100%;
+            }
+          }
+          textarea {
+            height: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+
+  padding: 20px;
+  text-align: center;
 }
