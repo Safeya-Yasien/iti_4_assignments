@@ -55,3 +55,17 @@ npm run dev
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+<!-- enhancing the readme -->
+
+- add responsive
+- add menu icon in header
+- add slider in hero section
+- enhance all imgs in all sections
+- convert all imgs to webp
+- compress all imgs after converting to webp
+- add favicon in meta tag
+- active links in header and add href to them
+- add hover to info section
+- edit team img rounded not circle exactly there is a problem
+
