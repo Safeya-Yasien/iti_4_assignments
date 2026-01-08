@@ -68,4 +68,3 @@ Give a ⭐️ if you like this project!
 - active links in header and add href to them
 - add hover to info section
 - edit team img rounded not circle exactly there is a problem
-
