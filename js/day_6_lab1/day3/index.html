@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="loginFormContainer">
+      <form action="user.html" method="get" id="loginForm">
+        <div>
+          <label for="userName">Enter your user name here</label>
+          <input
+            type="text"
+            placeholder="Enter your user name here"
+            name="userName"
+            id="userName"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            name="password"
+            id="password"
+            required
+          />
+        </div>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- task 3 -->
+    <div>
+      <a href="#" id="advertisingLink">Advertising</a>
+      <br /><br />
+      <a href="#" id="closePage">Close This Page</a>
+    </div>
+
+<!-- task 4 -->
+    <div>
+  <input type="checkbox" id="agree" />
+  <label for="agree">
+    <a href="terms.html" target="_blank">
+      I agree to Terms and conditions
+    </a>
+  </label>
+</div>
+
+
+    <script src="main.js"></script>
+  </body>
+</html>
