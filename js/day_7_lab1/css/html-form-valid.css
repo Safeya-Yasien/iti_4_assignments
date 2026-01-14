@@ -1,0 +1,32 @@
+#fullname {
+  border: 1px solid transparent;
+}
+
+#fullname:invalid {
+  border: 1px solid red;
+  background-color: #e5e7eb;
+}
+
+#fullname:valid {
+  border: 1px solid green;
+}
+
+#fullname:invalid + .fullNameError {
+  display: block;
+  color: red;
+  font-size: 0.8rem;
+}
+
+#fullname:valid + .fullNameError {
+  display: none;
+}
+
+.passwordRepeatedError {
+  display: none;
+  color: red;
+  font-size: 0.8rem;
+}
+
+#repeat-password:invalid + .passwordRepeatedError {
+  display: block;
+}
