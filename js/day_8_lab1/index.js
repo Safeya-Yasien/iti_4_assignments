@@ -15,7 +15,7 @@ request.onload = () => {
     const response = JSON.parse(request.response);
     // console.log("response after parsing", response);
     const data = response.users;
-    console.log("response after parsing", data);
+    // console.log("response after parsing", data);
     const container = document.querySelector(".container");
     container.innerHTML = "";
 
