@@ -1,0 +1,155 @@
+.main-container {
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  width: 100%;
+}
+.cart-container {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 80%;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.cart-item input[type="number"] {
+  width: 60px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.cart-item span {
+  font-weight: 600;
+}
+
+.cart-item button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  opacity: 0.9;
+}
+
+.cart-total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: right;
+}
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.cart-price {
+  font-weight: bold;
+}
+.cart-text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+.cart-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: firebrick;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+.subtotalContainer {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+  border-radius: 10px;
+  width: 30%;
+
+}
+.subtotal {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.checkout {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #111;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.subtotalContainer p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.subtotalContainer .total {
+  font-size: 22px;
+  font-weight: bold;
+  color: firebrick;
+}
+
+.subtotalContainer .total-items,
+.subtotalContainer .subtotal,
+.subtotalContainer .shipping {
+  font-weight: 600;
+}
