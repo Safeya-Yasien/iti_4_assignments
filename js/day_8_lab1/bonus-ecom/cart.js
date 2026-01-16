@@ -52,7 +52,7 @@ if (cart.length === 0) {
         // Delete item
         const deleteBtn = div.querySelector(".delete-item");
         deleteBtn.addEventListener("click", () => {
-          cart = cart.filter((c) => c.id !== item.id);
+          cart = cart.filter((c) => c !== item);
           localStorage.setItem("cart", JSON.stringify(cart));
           location.reload();
         });
