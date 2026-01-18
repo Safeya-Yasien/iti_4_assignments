@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <style>
+    body {
+      padding: 50px;
+    }
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .check-div {
+      display: flex;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <form>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="card_number">Password</label>
+        <input type="text" id="card_number" name="card_number" required />
+      </div>
+      <div class="error"></div>
+      <div class="check-div">
+        <input type="checkbox" id="remember_me" />
+        <label for="remember_me">Remember me</label>
+      </div>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script src="login.js"></script>
+  </body>
+</html>
