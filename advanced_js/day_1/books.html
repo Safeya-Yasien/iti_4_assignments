@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books</title>
+  </head>
+
+  <style>
+    body {
+      padding: 50px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    th {
+      background-color: #4caf50;
+      color: white;
+    }
+    td {
+      text-align: center;
+    }
+    button {
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <h1>Books</h1>
+
+    <table id="books">
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Reserve button</th>
+      </tr>
+      <tr>
+        <!-- data will be fetched from books.json -->
+        <td>The Great Gatsby</td>
+        <td>F. Scott Fitzgerald</td>
+        <td>Fiction</td>
+        <td>
+          <button>Reserve</button>
+        </td>
+      </tr>
+    </table>
+    <script src="books.js"></script>
+  </body>
+</html>
