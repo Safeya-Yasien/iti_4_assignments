@@ -16,16 +16,36 @@ form.addEventListener("submit", (e) => {
   const isValidEmail = checkEmail(email.value);
 
   if (isValidCardNumber && isValidEmail) {
-    alert("Login Successful");
-    sessionStorage.setItem("email", email.value);
-    sessionStorage.setItem("card_number", card_number.value);
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://127.0.0.1:5500/advanced_js/day_1/users.json");
+    xhr.onload = function () {
+      if (xhr.status == 200) {
+        const data = JSON.parse(xhr.responseText);
+        let found = false;
+        for (user of data) {
+          if (user.Email == email.value && user.Password == card_number.value) {
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          error.innerHTML = "Invalid Card Number or Email";
+          return;
+        } else {
+          alert("Login Successful");
+          sessionStorage.setItem("email", email.value);
+          sessionStorage.setItem("card_number", card_number.value);
 
-    if (remember_me.checked) {
-      let date = new Date();
-      date.setDate(date.getDate() + 1);
-      document.cookie = `email=${email.value}; expires=${date}`;
-      location.href = "books.html";
-    }
+          if (remember_me.checked) {
+            let date = new Date();
+            date.setDate(date.getDate() + 1);
+            document.cookie = `email=${email.value}; expires=${date}`;
+            location.href = "books.html";
+          }
+        }
+      }
+    };
+    xhr.send();
   } else {
     error.innerHTML = "Invalid Card Number or Email";
   }
