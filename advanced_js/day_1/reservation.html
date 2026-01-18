@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Books</title>
+    <title>Reservation</title>
   </head>
 
   <style>
@@ -38,31 +38,43 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    input[type="number"] {
+      width: 50px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .delete {
+      margin-top: 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px;
+    }
   </style>
   <body>
-    <h1>Books</h1>
+    <h1>Reservation</h1>
 
-    <a href="http://172.31.0.1:5500/advanced_js/day_1/reservation.html"
-      >Reservation</a
+    <a href="http://172.31.0.1:5500/advanced_js/day_1/books.html"
+      >Books</a
     >
 
-    <table id="books">
+    <button class="delete" id="delete-all">Delete All</button>
+
+    <table id="reservation">
       <tr>
         <th>Title</th>
         <th>Author</th>
         <th>Category</th>
-        <th>Reserve button</th>
+        <th>Quantity</th>
       </tr>
-      <tr>
-        <!-- data will be fetched from books.json -->
-        <td>The Great Gatsby</td>
-        <td>F. Scott Fitzgerald</td>
-        <td>Fiction</td>
-        <td>
-          <button>Reserve</button>
-        </td>
-      </tr>
+
+      <!-- data will be fetched from reservation.json -->
     </table>
-    <script src="books.js"></script>
+
+    <script src="reservation.js"></script>
   </body>
 </html>
