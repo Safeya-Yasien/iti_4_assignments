@@ -38,20 +38,39 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    a {
+      display: block;
+      margin-bottom: 20px;
+    }
+    .container {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .container input{
+      padding: 10px;
+    }
   </style>
   <body>
     <h1>Books</h1>
 
-    <a href="http://172.31.0.1:5500/advanced_js/day_1/reservation.html"
-      >Reservation</a
-    >
+    <div class="container">
+      <a href="http://172.31.0.1:5500/advanced_js/day_1/reservation.html"
+        >Reservation</a
+      >
+      <div>
+        <label>Filter by category</label>
+        <input id="filter-category" type="text" name="filter" placeholder="Search..." />
+      </div>
+    </div>
 
     <table id="books">
       <tr>
         <th>Title</th>
         <th>Author</th>
         <th>Category</th>
-        <th>Reserve button</th>
+        <th>Actions</th>
       </tr>
       <tr>
         <!-- data will be fetched from books.json -->

@@ -33,12 +33,15 @@ function getBookData(bookId, quantity) {
 
 function displayData(book, quantity) {
   let tr = document.createElement("tr");
+  tr.setAttribute("data-id", book.id);
   tr.innerHTML = `
                 <td>${book.title}</td>
-                <td>${book.author}</td>
                 <td>${book.category}</td>
                 <td>
                     <input type='number' value='${quantity}' onChange="changeValue(this,${book.id})"/>
+                </td>
+                <td>
+                  <button onclick="removeBook(${book.id})"> remove </button>
                 </td>
                     `;
   reservation.appendChild(tr);
@@ -77,6 +80,29 @@ function changeValue(element, bookId) {
     }
   }
   localStorage.setItem("reservedBooks", JSON.stringify(reservedBooks));
+}
+
+function removeBook(bookId) {
+  const reservedBooks = JSON.parse(localStorage.getItem("reservedBooks")) || [];
+  let index = -1;
+
+  const confirmMessage = confirm("Are you sure from deleting this book");
+
+  if (confirmMessage) {
+    for (let i = 0; i < reservedBooks.length; i++) {
+      if (Number(reservedBooks[i].id) === bookId) {
+        index = i;
+        break;
+      }
+    }
+
+    if (index !== -1) {
+      reservedBooks.splice(index, 1);
+      const res = document.querySelector(`tr[data-id="${bookId}"]`).remove();
+    }
+
+    localStorage.setItem("reservedBooks", JSON.stringify(reservedBooks));
+  }
 }
 
 deleteAll.addEventListener("click", function () {

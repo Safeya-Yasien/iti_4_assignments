@@ -1,4 +1,5 @@
 const books = document.querySelector("#books");
+const filterCategoryInput = document.getElementById("filter-category");
 
 function getBooks() {
   if (checkUserExist()) {
@@ -30,7 +31,6 @@ function reserveBook(bookId) {
 
   let index = -1;
   for (let i = 0; i < reservedBooks.length; i++) {
-    console.log(reservedBooks[i].id);
     if (reservedBooks[i].id == Number(bookId)) {
       index = i;
       break;
@@ -53,5 +53,13 @@ function checkUserExist() {
   }
   return true;
 }
+
+// filterCategoryInput.onchange(() => {
+//   console.log('change')
+// })
+
+// function filterBooks(){
+
+// }
 
 getBooks();
