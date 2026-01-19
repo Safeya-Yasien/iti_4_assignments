@@ -42,6 +42,7 @@ form.addEventListener("submit", (e) => {
             document.cookie = `email=${email.value}; expires=${date}`;
             location.href = "books.html";
           }
+          location.href = "books.html";
         }
       }
     };

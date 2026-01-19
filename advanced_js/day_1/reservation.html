@@ -54,15 +54,22 @@
       cursor: pointer;
       padding: 10px;
     }
+    .total {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   </style>
   <body>
     <h1>Reservation</h1>
 
-    <a href="http://172.31.0.1:5500/advanced_js/day_1/books.html"
-      >Books</a
-    >
+    <a href="http://172.31.0.1:5500/advanced_js/day_1/books.html">Books</a>
+    <div class="total">
+      <p>Total Books: <span id="total-books"></span></p>
 
-    <button class="delete" id="delete-all">Delete All</button>
+      <button class="delete" id="delete-all">Delete All</button>
+    </div>
 
     <table id="reservation">
       <tr>

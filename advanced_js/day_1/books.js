@@ -14,7 +14,7 @@ function getBooks() {
                         <td>${book.author}</td>
                         <td>${book.category}</td>
                         <td>
-                            <button onclick="reserveBook('${book.id}')">Reserve</button>
+                            <button onclick="reserveBook('${book.id}')" >Reserve</button>
                         </td>
                     `;
           books.appendChild(tr);

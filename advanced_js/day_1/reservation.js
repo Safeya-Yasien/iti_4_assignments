@@ -1,8 +1,11 @@
 const reservation = document.querySelector("#reservation");
 const deleteAll = document.querySelector("#delete-all");
+const totalBooks = document.querySelector("#total-books");
 
 function getReservation() {
   const reservedBooks = JSON.parse(localStorage.getItem("reservedBooks")) || [];
+  const count = reservedBooks.length;
+  totalBooks.innerHTML = count;
 
   for (book of reservedBooks) {
     let bookId = book.id;
