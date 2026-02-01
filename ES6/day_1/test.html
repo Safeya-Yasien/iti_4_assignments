@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let x = {
+      //     name: "John",
+      //     age: 30,
+      //   };
+
+      //   let y = '{"name":"Safeya"}';
+
+      //   console.log(typeof x);
+      //   console.log(y.name);
+
+      //   const z = JSON.parse(y)
+      //   console.log(z.name);
+
+      class Animal {
+        constructor(name, color) {
+          // console.log('Animal created');
+          this.name = name;
+          this.color = color;
+        }
+        move() {
+          // console.log("Animal moved");
+          console.log(`Animal ${this.name} moved`);
+        }
+
+        jump() {
+          //   console.log("Animal jumped");
+          console.log(`Animal ${this.name} jumped`);
+        }
+      }
+
+      //   let lion = new Animal();
+      // lion.move()
+      //   let lion = new Animal("lion", "yellow");
+      //   let tigger = new Animal("tigger", "blue");
+      //   lion.move();
+      //   tigger.jump()
+
+      const Person = function (name, age) {
+        console.log(this); // Person {}
+        this.name = name;
+        this.age = age;
+        // this.getBirthday = function () {
+        //   console.log(this.name + " was born on " + this.age);
+        // };
+      };
+
+      const nour = new Person("John", 30);
+      const ahmed = new Person("agned", 5);
+      //   console.log(nour);
+      //   console.log(ahmed);
+
+      Person.prototype.getBirthday = function () {
+        console.log(this.name + " was born on " + this.age);
+      };
+      
+      console.log(nour);
+      console.log(ahmed);
+    </script>
+  </body>
+</html>
