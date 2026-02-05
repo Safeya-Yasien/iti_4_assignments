@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>HTML5 Registration Form</title>
+  </head>
+  <body>
+    <form method="GET">
+      <h2>Register</h2>
+
+      <fieldset>
+        <legend>Account Details</legend>
+
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          minlength="4"
+          placeholder="Min 4 characters"
+        />
+
+        <label for="email">Email Address:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="name@example.com"
+        />
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Profile Info</legend>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" />
+
+        <label for="skill-level">Experience Level (0-100):</label>
+        <input
+          type="range"
+          id="skill-level"
+          name="skill-level"
+          min="0"
+          max="100"
+          step="10"
+          value="50"
+        />
+
+        <label for="browser">Preferred Browser:</label>
+        <input
+          list="browsers"
+          id="browser"
+          name="browser"
+          placeholder="Type to search..."
+        />
+        <datalist id="browsers">
+          <option value="Chrome"></option>
+          <option value="Firefox"></option>
+          <option value="Safari"></option>
+          <option value="Edge"></option>
+          <option value="Brave"></option>
+        </datalist>
+      </fieldset>
+
+      <fieldset>
+        <legend>Verification</legend>
+        <label>
+          <input type="checkbox" name="terms" required />
+          I agree to the terms and conditions
+        </label>
+      </fieldset>
+
+      <button type="submit">Register Now</button>
+    </form>
+
+    <script src="index.js"></script>
+  </body>
+</html>
