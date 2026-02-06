@@ -1,0 +1,57 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 20px;
+}
+
+.custom-navbar {
+  background-color: #2c3e50;
+  border-radius: 15px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.custom-navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-navbar li {
+  /* why inline block? */
+  /* makes each list item sit next to each other in a row and to control the width of the navbar */
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.custom-navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: block;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.custom-navbar i {
+  margin-right: 8px;
+  transition: color 0.4s ease;
+}
+
+.custom-navbar a:hover {
+  background-color: #ecf0f1;
+  color: #2980b9;
+}
+
+.custom-navbar a:hover i {
+  color: #e74c3c;
+}
+
+.custom-text {
+  text-align: center;
+  font-family: "Playwrite NZ Basic", cursive;
+}
