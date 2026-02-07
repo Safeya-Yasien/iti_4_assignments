@@ -13,14 +13,16 @@ sad.src = "sad.png";
 const happy = new Image();
 happy.src = "smiley.png";
 
-function draw(img) {
+function draw(img, scale) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  let width = 200;
-  let height = 200;
+  let width = 200 * scale;
+  let height = 200 * scale;
 
   let x = (canvas.width - width) / 2;
   let y = (canvas.height - height) / 2;
+
+  width *= scale;
 
   ctx.drawImage(img, x, y, width, height);
 }
@@ -30,9 +32,9 @@ sad.onload = () => {
 };
 
 canvas.addEventListener("mousedown", () => {
-  draw(happy);
+  draw(happy, 1.5);
 });
 
 canvas.addEventListener("mouseup", () => {
-  draw(sad);
+  draw(sad, 1);
 });
