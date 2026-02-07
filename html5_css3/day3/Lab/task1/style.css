@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+#tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: none;
+  pointer-events: none;
+  font-size: 14px;
+}
+
+svg {
+  cursor: pointer;
+}
+
+.organ {
+  transition: fill 0.3s ease;
+  fill: #ffdca2;
+  stroke: #333;
+  stroke-width: 2;
+}
+.eye {
+  fill: white;
+}
+.nose {
+  fill: #ffb88c;
+}
+.mouth {
+  fill: #ff6b6b;
+}

@@ -1,0 +1,21 @@
+body {
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+/* canvas {
+  width: 100px;
+  height: 100px;
+  outline: 1px solid #000000;
+} */
+
+canvas {
+  background: white;
+  outline: 2px solid #000;
+  cursor: pointer;
+}
