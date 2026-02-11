@@ -1,0 +1,136 @@
+/* =========================================
+    1. BASE STYLES (MOBILE FIRST)
+    Target: Smartphones (<768px)
+    =========================================   */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+/* task 1 : mobile base styles  */
+.app-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "sidebar"
+    "footer";
+}
+
+.main-nav ul {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  list-style: none;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.main-header {
+  grid-area: header;
+}
+.content {
+  grid-area: main;
+  padding: 20px;
+}
+.sidebar {
+  grid-area: sidebar;
+  padding: 20px;
+  background: #f4f4f4;
+}
+.main-footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 20px;
+}
+
+.cta-btn {
+  display: none;
+}
+
+.card {
+  background: #ddd;
+  height: 150px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+}
+
+/* =========================================
+    2. TABLET LAYOUT
+    Target: Tablets (>=768px)
+    =========================================   */
+@media (min-width: 768px) {
+  .app-layout {
+    grid-template-columns: 70% 30%;
+    grid-template-areas:
+      "header header"
+      "main sidebar"
+      "footer footer";
+  }
+
+  .main-header {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .main-nav ul {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+    3. DESKTOP LAYOUT
+    Target: Laptops/Desktops (>=1024px)
+    =========================================   */
+@media (min-width: 1024px) {
+  .app-layout {
+    grid-template-columns: 1fr minmax(auto, 800px) 250px 1fr;
+    grid-template-areas:
+      "header header header header"
+      ". main sidebar . "
+      "footer footer footer footer";
+  }
+
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+  }
+
+  .cta-btn {
+    display: block;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    height: fit-content;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
