@@ -1,0 +1,86 @@
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  background: url("images/hero.jpg") no-repeat center center/cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.z-3 {
+  z-index: 3;
+}
+
+/* features */
+.feature-circle-wrapper {
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+}
+
+.feature-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-circle:hover {
+  transform: scale(1.05);
+}
+
+.feature-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10px;
+}
+
+/* contact */
+.contact-section {
+  position: relative;
+  min-height: 50vh;
+  background: url("images/hero.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+.contact-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.social-icon {
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  color: #ffc107 !important;
+}
