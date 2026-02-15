@@ -1,0 +1,14 @@
+@use "../abstracts/config" as cfg;
+@use "../abstracts/mixins" as mx;
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+
+  @each $name, $color in cfg.$colors {
+    &--#{$name} {
+      @include mx.btn-style($color);
+    }
+  }
+}

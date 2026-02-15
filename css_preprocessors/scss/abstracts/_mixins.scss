@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "config" as cfg;
+
+@mixin respond-to($breakpoint) {
+  @if map.has-key(cfg.$breakpoints, $breakpoint) {
+    @media (min-width: map.get(cfg.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map.keys(cfg.$breakpoints)}.";
+  }
+}
+
+@mixin btn-style($bg-color) {
+  padding: map.get(cfg.$spacing-scale, "sm") map.get(cfg.$spacing-scale, md);
+  border: none;
+  border-radius: 4px;
+  background-color: $bg-color;
+  color: white;
+  cursor: pointer;
+}

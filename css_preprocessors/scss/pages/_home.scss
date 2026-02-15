@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "../abstracts/config" as cfg;
+@use "../abstracts/mixins" as mx;
+
+.hero {
+  padding: map.get(cfg.$spacing-scale, lg);
+  background-color: map.get(cfg.$colors, primary);
+  color: white;
+
+  @include mx.respond-to(md) {
+    padding: map.get(cfg.$spacing-scale, lg) * 2;
+  }
+}
+
+.products {
+  margin-top: map.get(cfg.$spacing-scale, lg);
+
+  @include mx.respond-to(md) {
+    display: flex;
+    gap: map.get(cfg.$spacing-scale, md);
+  }
+}

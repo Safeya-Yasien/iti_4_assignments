@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "../abstracts/config" as cfg;
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: map.get(cfg.$spacing-scale, md);
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: map.get(cfg.$spacing-scale, sm);
+  }
+
+  &__body {
+    margin-bottom: map.get(cfg.$spacing-scale, sm);
+  }
+
+  &__footer {
+    font-size: 0.875rem;
+  }
+
+  @each $name, $color in cfg.$colors {
+    &--#{$name} {
+      --card-bg-color: #{$color};
+    }
+  }
+}

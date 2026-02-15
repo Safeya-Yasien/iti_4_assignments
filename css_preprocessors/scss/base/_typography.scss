@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "../abstracts/config" as cfg;
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: map.get(cfg.$spacing-scale, md);
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: map.get(cfg.$spacing-scale, sm);
+}
