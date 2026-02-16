@@ -8,19 +8,68 @@
   <body>
     <section class="hero">
       <h1>Hero</h1>
+      <p>This section uses spacing and primary theme color from $colors.</p>
     </section>
 
-    <section class="products">
+    <section class="buttons">
+      <h2>Buttons</h2>
+      <button class="button button--primary">Primary</button>
+      <button class="button button--secondary">Secondary</button>
+      <button class="button button--success">Success</button>
+      <button class="button button--info">Info</button>
+      <button class="button button--warning">Warning</button>
+    </section>
+
+    <section class="cards">
+      <h2>Cards</h2>
       <div class="row">
-        <div class="col-6 col-md-4">
+        <div class="col-4 col-md-3">
           <div class="card card--primary">
             <div class="card__title">Card 1</div>
-            <div class="card__body">Body content</div>
+            <div class="card__body">Primary card body</div>
             <div class="card__footer">Footer</div>
           </div>
         </div>
+        <div class="col-4 col-md-3">
+          <div class="card card--secondary">
+            <div class="card__title">Card 2</div>
+            <div class="card__body">Secondary card body</div>
+            <div class="card__footer">Footer</div>
+          </div>
+        </div>
+        <div class="col-4 col-md-3">
+          <div class="card card--success">
+            <div class="card__title">Card 3</div>
+            <div class="card__body">Success card body</div>
+            <div class="card__footer">Footer</div>
+          </div>
+        </div>
+        <div class="col-4 col-md-3">
+          <div class="card card--info">
+            <div class="card__title">Card 4</div>
+            <div class="card__body">Info card body</div>
+            <div class="card__footer">Footer</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products">
+      <h2>Products</h2>
+      <div class="row">
         <div class="col-6 col-md-4">
-          <button class="button button--success">Click Me</button>
+          <div class="card card--primary">
+            <div class="card__title">Product 1</div>
+            <div class="card__body">Description</div>
+            <div class="card__footer">Price: $10</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4">
+          <div class="card card--success">
+            <div class="card__title">Product 2</div>
+            <div class="card__body">Description</div>
+            <div class="card__footer">Price: $15</div>
+          </div>
         </div>
       </div>
     </section>
