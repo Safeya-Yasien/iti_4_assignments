@@ -3,7 +3,6 @@ $(document).ready(function () {
 
   box.hover(function () {
     box
-      .stop(true)
       .animate({ left: "500px" }, 800)
       .animate({ top: "200px" }, 600, function () {
         $(this).css("background-color", "blue");

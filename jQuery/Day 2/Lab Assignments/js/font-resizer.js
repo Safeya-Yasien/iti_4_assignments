@@ -8,14 +8,24 @@ $(document).ready(function () {
   console.log("font size is " + fontSize);
 
   increaseBtn.click(function () {
-    fontSize++;
-    content.css("font-size", fontSize + "px");
-    error.text("Font size is " + fontSize);
+    if (fontSize < 100) {
+      fontSize++;
+      content.css("font-size", fontSize + "px");
+      error.text("Font size is " + fontSize);
+    } else {
+      error.text("Maximum font size is 100");
+      fontSize = 100;
+    }
   });
 
   decreaseBtn.click(function () {
-    fontSize--;
-    content.css("font-size", fontSize + "px");
-    error.text("Font size is " + fontSize);
+    if (fontSize > 10) {
+      fontSize--;
+      content.css("font-size", fontSize + "px");
+      error.text("Font size is " + fontSize);
+    } else {
+      error.text("Minimum font size is 0");
+      fontSize = 10;
+    }
   });
 });
