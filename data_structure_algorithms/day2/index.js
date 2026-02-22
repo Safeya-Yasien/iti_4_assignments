@@ -80,7 +80,7 @@ class LinkedList {
 
     // if we have to remove the first node 'head'
     if (this.head.value === value) {
-        // then make head point to the next node
+      // then make head point to the next node
       this.head = this.head.next;
       this.length--;
       return;
@@ -99,9 +99,12 @@ class LinkedList {
   }
 
   //  remove duplicate
-  removeDuplicates() {
+  removeDuplicate() {
     let current = this.head;
+    // for no duplicate
+    // fast search not search element by element
     const seen = new Set();
+
     let prev = null;
 
     while (current) {
@@ -134,7 +137,7 @@ myList.add(20);
 console.log("print the list after adding duplicate node");
 myList.print();
 
-myList.removeDuplicates();
+myList.removeDuplicate();
 console.log("print the list after removing duplicate nodes");
 myList.print();
 
