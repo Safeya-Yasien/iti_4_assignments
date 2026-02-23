@@ -30,7 +30,10 @@ class DoubleQueue {
     this.front = this.front.next;
 
     if (this.front) {
+      // because he become the first node
       this.front.prev = null;
+    } else {
+      this.teal = null;
     }
     return popedValue;
   }
