@@ -73,7 +73,7 @@ class Tree {
       }
 
       // deleting node with one children
-    //   move to it's space 
+      //   move to it's space
       if (node.left === null) {
         node = node.right;
         return node;
@@ -81,14 +81,6 @@ class Tree {
         node = node.left;
         return node;
       }
-
-      // Deleting node with two children
-      // minimum node of the right subtree
-      let aux = this.findMinNode(node.right);
-      node.value = aux.value;
-
-      node.right = this.removeNode(node.right, aux.value);
-      return node;
     }
   }
 }
@@ -98,6 +90,7 @@ tree.insert(5);
 tree.insert(10);
 tree.insert(20);
 tree.insert(30);
+tree.insert(25);
 tree.insert(40);
 tree.insert(50);
 
