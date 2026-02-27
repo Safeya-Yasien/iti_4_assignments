@@ -1,9 +1,9 @@
 class ConfigureVals {
   static instance = null;
-  constructor(xpoint = 0, ypoint = 0, shape = null) {
+  constructor(xPoint = 0, yPoint = 0, shape = null) {
     if (ConfigureVals.instance === null) {
-      this.xpoint = xpoint;
-      this.ypoint = ypoint;
+      this.xPoint = xPoint;
+      this.yPoint = yPoint;
       this.shape = shape;
       ConfigureVals.instance = this;
     } else {
@@ -14,7 +14,7 @@ class ConfigureVals {
 
 console.log("Configure Values Pattern");
 const configA = new ConfigureVals();
-console.log(configA.xpoint);
+console.log(configA.xPoint);
 
 const configB = new ConfigureVals(100, 200, "Square");
-console.log(configB.xpoint);
+console.log(configB.xPoint);

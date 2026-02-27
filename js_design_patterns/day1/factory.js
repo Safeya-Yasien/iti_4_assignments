@@ -21,7 +21,7 @@ class ToyFactory {
       case "car":
         return new ToyCar(item.color, item.price, item.name);
       default:
-        throw new Error("Toy type not supported.");
+        throw new Error("Invalid type");
     }
   }
 }
@@ -38,7 +38,7 @@ const sportsCar = factory.createToy({
   type: "car",
   color: "red",
   price: 15.0,
-  name: "Lightning Bolt",
+  name: "sports car",
 });
 
 console.log("Factory Pattern");
