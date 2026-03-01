@@ -10,7 +10,7 @@ describe("createArray function", () => {
   });
 
   // return type array
-  it("should return an array", () => {
+  it("return type  array", () => {
     const result = createArray(counter);
     // console.log('array from first test', result)
     // expect(result).to.be.an("array");
@@ -30,7 +30,7 @@ describe("createArray function", () => {
   });
 
   // pending test
-  it.skip("should be pending", () => {});
+  it.skip("pending task", () => {});
 
   // delay
   it("create array after 5 seconds", function (done) {

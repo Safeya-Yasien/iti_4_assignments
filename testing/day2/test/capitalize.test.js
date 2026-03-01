@@ -15,7 +15,7 @@ describe("capitalizeText function", () => {
   });
 
   //   error if user enter number
-  it("should throw a TypeError if input is a number", () => {
+  it(" throw a TypeError if input is a number", () => {
     // throw function must take callback function
     expect(() => capitalizeText(1)).to.throw(
       TypeError,
