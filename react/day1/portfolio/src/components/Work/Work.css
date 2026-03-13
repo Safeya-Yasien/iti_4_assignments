@@ -16,8 +16,7 @@
 
 .portfolio__grid {
   display: grid;
-  grid-template-columns: repeat(3, 250px);
-  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 .portfolio__card {
@@ -40,7 +39,6 @@
 }
 
 .portfolio__card__label {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
   text-align: center;
@@ -55,4 +53,40 @@
   height: 1.5px;
   background: #fff;
   opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 48px 24px;
+  }
+
+  .portfolio__heading {
+    font-size: 32px;
+  }
+
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio {
+    padding: 40px 16px;
+  }
+
+  .portfolio__heading {
+    font-size: 28px;
+    white-space: normal;
+  }
+
+  .portfolio__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .portfolio__card__label {
+    font-size: 11px;
+    padding: 0 10px;
+    letter-spacing: 0.5px;
+  }
 }

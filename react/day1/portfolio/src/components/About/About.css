@@ -45,3 +45,30 @@
 .about__download:hover {
   background: #444;
 }
+@media (max-width: 768px) {
+  .about {
+    padding: 32px 24px;
+    gap: 32px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about__heading {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .about__right {
+    gap: 16px;
+  }
+  .about__text {
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .about__heading {
+    font-size: 24px;
+  }
+}

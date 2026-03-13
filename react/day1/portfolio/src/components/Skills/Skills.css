@@ -1,0 +1,126 @@
+.skills {
+  background: #2e2c29;
+  padding: 50px 0px;
+}
+
+.skills__heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.skills__container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.skills__layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.skills__focus-col {
+  flex: 0 0 160px;
+  min-width: 0;
+}
+
+.skills__bars-col {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.skills__desc {
+  font-size: 0.8125rem;
+  color: #ccc;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.skills__focus-label {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  border-bottom: 1.5px solid #fff;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.skills__focus-item {
+  color: white;
+  font-size: 13px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skill-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.skill-bar__name {
+  font-size: 11px;
+  color: #fff;
+  width: 88px;
+  letter-spacing: 0.5px;
+  padding: 4px 0px;
+  background-color: #cccccc84;
+  text-align: center;
+}
+
+.skill-bar__track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.skill-bar__fill {
+  height: 100%;
+  background: #a09888;
+  border-radius: 0;
+  transition: width 1s ease;
+}
+
+@media (max-width: 520px) {
+  .skills__focus-col {
+    flex: 0 0 100%;
+  }
+
+  .skills__focus-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+  }
+
+  .skills__focus-label {
+    width: 100%;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 8px;
+  }
+
+  .skills__focus-item {
+    border-bottom: none;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.07);
+    font-size: 12px;
+  }
+
+  .skill-bar__name {
+    width: 72px;
+    font-size: 10px;
+  }
+}
