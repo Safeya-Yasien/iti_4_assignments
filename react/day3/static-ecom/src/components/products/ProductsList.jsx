@@ -13,6 +13,12 @@ const ProductsList = () => {
   ];
 
   return (
+    // without height the desktop propblem
+    //  <section className="py-12 bg-gray-50">
+
+    // dvh problem in mobile
+    // <section className="py-12 bg-gray-50 h-dvh">
+
     <section className="py-12 bg-gray-50 min-h-screen">
       <div className="container mx-auto px-4">
         <div className="mb-8 flex justify-between items-end">
@@ -23,7 +29,7 @@ const ProductsList = () => {
             <p className="text-gray-600">Explore our latest arrivals</p>
           </div>
 
-          <div className="flex gap-4 mb-8">
+          <div className="flex-column md:flex gap-4 mb-8 ">
             <button
               onClick={() => setSearchParams({ category: "electronics" })}
               className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
@@ -46,8 +52,13 @@ const ProductsList = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {products.map((p) => (
-            <Product key={p.id} id={p.id} title={p.title} price={p.price} />
+          {products.map((product) => (
+            <Product
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              price={product.price}
+            />
           ))}
         </div>
       </div>
