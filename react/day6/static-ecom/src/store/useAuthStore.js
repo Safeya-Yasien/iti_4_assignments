@@ -1,0 +1,11 @@
+import { create } from "zustand";
+
+const useAuthStore = create((set) => ({
+  token: null,
+
+  login: (newToken) => set({ token: newToken }),
+
+  logout: () => set({ token: null }),
+}));
+
+export default useAuthStore;
