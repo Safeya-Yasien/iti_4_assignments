@@ -8,9 +8,7 @@ const MainLayout = () => {
       <Header />
 
       <main className="relative pt-20 pb-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Outlet />
-        </div>
+        <Outlet />
       </main>
       <Footer />
     </div>

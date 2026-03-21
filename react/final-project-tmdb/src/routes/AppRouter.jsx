@@ -3,6 +3,7 @@ import AuthLayout from "@/layouts/AuthLayout";
 import MainLayout from "@/layouts/MainLayout";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
+import MovieDetails from "@/pages/MovieDetails";
 import NotFound from "@/pages/NotFound";
 import Signup from "@/pages/Signup";
 import React from "react";
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "movie/:id",
+        element: <MovieDetails />,
       },
 
       {
