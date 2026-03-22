@@ -61,7 +61,7 @@ const Login = () => {
 
         <button
           type="submit"
-          className="cursor-pointer flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+          className="cursor-pointer flex w-full justify-center rounded-md border border-transparent bg-main py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
         >
           Sign in
         </button>
@@ -72,7 +72,7 @@ const Login = () => {
           Don't have an account?{" "}
           <Link
             to="/signup"
-            className="font-semibold text-blue-600 hover:text-blue-500 transition-colors"
+            className="font-semibold text-main hover:text-blue-500 transition-colors"
           >
             Create an account
           </Link>

@@ -4,7 +4,7 @@ import { CiSearch } from "react-icons/ci";
 const Header = () => {
   const navLinkClass = ({ isActive }) =>
     `text-sm font-medium transition-colors hover:text-blue-500 ${
-      isActive ? "text-blue-600" : "text-gray-300"
+      isActive ? "text-main" : "text-gray-300"
     }`;
 
   return (
@@ -17,7 +17,7 @@ const Header = () => {
           to="/"
           className="text-2xl font-black tracking-tighter text-white"
         >
-          TMDB<span className="text-blue-600">FLIX</span>
+          TMDB<span className="text-main">FLIX</span>
         </Link>
 
         {/* Navigation */}
@@ -46,7 +46,7 @@ const Header = () => {
           {/* User Profile / Auth */}
           <Link
             to="/login"
-            className="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20"
+            className="rounded-full bg-main px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20"
           >
             Sign In
           </Link>
