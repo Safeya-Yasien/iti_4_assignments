@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white ">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 space-y-16 pb-20">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-14 relative z-20 space-y-16 pb-20">
         {!isLoading && <Hero movie={featuredMovie} />}
 
         <TrendingMovies />

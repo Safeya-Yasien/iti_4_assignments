@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router";
+import { CiSearch } from "react-icons/ci";
 
 const Header = () => {
   const navLinkClass = ({ isActive }) =>
@@ -8,9 +9,9 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 h-16 bg-transparent backdrop-blur-md border-b border-white/5`}
+      className={`fixed top-0 z-50 w-full transition-all duration-300 h-16 bg-transparent backdrop-blur-md border-b border-white/5 overflow-hidden`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-14 flex items-center justify-between h-full w-full box-border">
         {/* Logo */}
         <Link
           to="/"
@@ -38,21 +39,8 @@ const Header = () => {
         {/* Actions */}
         <div className="flex items-center gap-5">
           {/* Search Icon (Simulated) */}
-          <button className="text-gray-300 hover:text-white transition-colors">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-              />
-            </svg>
+          <button className="cursor-pointer text-gray-300 hover:text-white transition-colors">
+            <CiSearch className="w-5 h-5" />
           </button>
 
           {/* User Profile / Auth */}

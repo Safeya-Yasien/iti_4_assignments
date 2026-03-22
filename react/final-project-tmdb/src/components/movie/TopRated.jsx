@@ -16,7 +16,7 @@ const TopRated = () => {
   }
 
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section >
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-black uppercase tracking-tighter italic">
           Top Rated
