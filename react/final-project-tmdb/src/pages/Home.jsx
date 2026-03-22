@@ -1,19 +1,21 @@
-import MoviesList from "@/components/movie/MoviesList";
+import Hero from "@/components/Hero";
+import TopRated from "@/components/movie/TopRated";
+import TrendingMovies from "@/components/movie/TrendingMovies";
+import { useGetTrendingMovies } from "@/hooks/useGetTrendingMovies";
 
 const Home = () => {
+  const { movies, isLoading } = useGetTrendingMovies();
+
+  const featuredMovie = movies?.[0];
+
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white pt-20">
+    <div className="min-h-screen bg-[#0a0a0a] text-white ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 space-y-16 pb-20">
-        {/* Top Rated Grid */}
-        <section>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-black uppercase tracking-tighter italic">
-              Top Rated
-            </h2>
-            <div className="h-1 flex-1 bg-gray-600/20 mx-6 hidden md:block"></div>
-          </div>
-          <MoviesList />
-        </section>
+        {!isLoading && <Hero movie={featuredMovie} />}
+
+        <TrendingMovies />
+
+        <TopRated />
       </div>
     </div>
   );

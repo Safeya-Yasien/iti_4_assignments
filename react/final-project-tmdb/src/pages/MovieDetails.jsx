@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router";
-import { useGetMovieDetails } from "@/hooks/useGetMovies";
 import MovieDetailsSkeleton from "@/components/movie/MovieDetailsSkeleton";
+import { useGetMovieDetails } from "@/hooks/useGetMovieDetails";
 
 const MovieDetails = () => {
   const { id } = useParams();
