@@ -2,8 +2,11 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router";
 import { signupSchema } from "@/schemas/signupSchema";
+import { useSignup } from "@/hooks/useAuth";
 
 const Signup = () => {
+  const { mutate: signup, isPending } = useSignup();
+
   const {
     register,
     handleSubmit,
@@ -13,7 +16,17 @@ const Signup = () => {
   });
 
   const onSubmit = (data) => {
-    console.log("Account Created:", data);
+    signup(
+      { ...data },
+      {
+        onSuccess: () => {
+          alert("Account created successfully");
+        },
+        onError: () => {
+          alert("Account creation failed");
+        },
+      },
+    );
   };
 
   return (
@@ -87,9 +100,11 @@ const Signup = () => {
 
       <button
         type="submit"
-        className="cursor-pointer  w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-main hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+        disabled={isPending}
+        className={`cursor-pointer  w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-main hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors
+          ${isPending ? "opacity-50" : ""}`}
       >
-        Create Account
+        {isPending ? "Creating account..." : "Create Account"}
       </button>
 
       <div className="text-center mt-4">

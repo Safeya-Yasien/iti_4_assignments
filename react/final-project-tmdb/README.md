@@ -22,3 +22,7 @@ https://github.com/Safeya-Yasien/iti_4_assignments/tree/main/react/final-project
 ###### search
 ###### login
 ###### signup
+###### toast alert instead of window alert
+###### 
+
+

@@ -1,9 +1,13 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "@/schemas/loginSchema";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useLogin } from "@/hooks/useAuth";
 
 const Login = () => {
+  const { mutate: login, isPending } = useLogin();
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -13,7 +17,18 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
-    console.log("Form Data Validated:", data);
+    login(
+      { ...data },
+      {
+        onSuccess: () => {
+          alert("Login Successful");
+          navigate("/");
+        },
+        onError: () => {
+          alert("Login Failed");
+        },
+      },
+    );
   };
 
   return (
@@ -61,9 +76,17 @@ const Login = () => {
 
         <button
           type="submit"
-          className="cursor-pointer flex w-full justify-center rounded-md border border-transparent bg-main py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+          disabled={isPending}
+          className={`
+            cursor-pointer flex w-full justify-center rounded-md border border-transparent bg-main py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors
+            ${
+              isPending
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-blue-700 focus:ring-blue-500"
+            }
+            `}
         >
-          Sign in
+          {isPending ? "Logging in..." : "Log in"}
         </button>
       </form>
 
