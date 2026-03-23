@@ -1,7 +1,12 @@
 import { Link, NavLink } from "react-router";
 import { CiSearch } from "react-icons/ci";
+import { useUser } from "@/hooks/useUser";
+import { useLogout } from "@/hooks/useAuth";
 
 const Header = () => {
+  const { data: user, isLoading } = useUser();
+  const { mutate: logout } = useLogout();
+
   const navLinkClass = ({ isActive }) =>
     `text-sm font-medium transition-colors hover:text-blue-500 ${
       isActive ? "text-main" : "text-gray-300"
@@ -44,12 +49,26 @@ const Header = () => {
           </button>
 
           {/* User Profile / Auth */}
-          <Link
-            to="/login"
-            className="rounded-full bg-main px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20"
-          >
-            Sign In
-          </Link>
+          {isLoading ? null : user ? (
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-gray-300">
+                {user.user_metadata?.username ?? user.email}
+              </span>
+              <button
+                onClick={() => logout()}
+                className="cursor-pointer rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white hover:bg-white/10 transition-all"
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <Link
+              to="/login"
+              className="rounded-full bg-main px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20"
+            >
+              Sign In
+            </Link>
+          )}
         </div>
       </div>
     </header>

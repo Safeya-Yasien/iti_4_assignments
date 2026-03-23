@@ -1,11 +1,12 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { signupSchema } from "@/schemas/signupSchema";
 import { useSignup } from "@/hooks/useAuth";
 
 const Signup = () => {
   const { mutate: signup, isPending } = useSignup();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -21,6 +22,7 @@ const Signup = () => {
       {
         onSuccess: () => {
           alert("Account created successfully");
+          navigate("/login");
         },
         onError: () => {
           alert("Account creation failed");

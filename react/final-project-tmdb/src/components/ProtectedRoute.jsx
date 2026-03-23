@@ -1,12 +1,12 @@
-// import useAuthStore from "@/store/useAuthStore";
+import { useUser } from "@/hooks/useUser";
 import { Navigate, Outlet } from "react-router";
 
 const ProtectedRoute = () => {
-  // const { token } = useAuthStore();
+  const { data: user, isLoading } = useUser();
 
-  // if (!token) {
-  //   return <Navigate to="/login" replace />;
-  // }
+  if (isLoading) return null;
+
+  if (!user) return <Navigate to="/login" replace />;
 
   return <Outlet />;
 };

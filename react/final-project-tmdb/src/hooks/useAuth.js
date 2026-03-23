@@ -18,8 +18,14 @@ export function useLogin() {
 
 export function useSignup() {
   return useMutation({
-    mutationFn: async ({ email, password }) => {
-      const { data, error } = await supabase.auth.signUp({ email, password });
+    mutationFn: async ({ email, password, username }) => {
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: { username },
+        },
+      });
       if (error) throw error;
       return data;
     },
