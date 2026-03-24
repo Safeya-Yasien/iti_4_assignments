@@ -47,7 +47,7 @@ const Cart = () => {
                 className="w-20 h-20 object-contain bg-gray-50 rounded-lg p-2"
               />
 
-              <div className="ml-4 flex-grow">
+              <div className="ml-4 grow">
                 <h3 className="font-bold text-gray-800 line-clamp-1">
                   {item.title}
                 </h3>
