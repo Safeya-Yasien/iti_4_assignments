@@ -7,6 +7,7 @@ import Login from "@/pages/Login";
 import MovieDetails from "@/pages/MovieDetails";
 import MyList from "@/pages/MyList";
 import NotFound from "@/pages/NotFound";
+import Search from "@/pages/Search";
 import Signup from "@/pages/Signup";
 import React from "react";
 import { createBrowserRouter } from "react-router";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             <Account />
           </ProtectedRoute>
         ),
+      },
+      {
+        path: "search",
+        element: <Search />,
       },
 
       {
