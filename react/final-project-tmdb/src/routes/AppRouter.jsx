@@ -1,6 +1,7 @@
 import ProtectedRoute from "@/components/ProtectedRoute";
 import AuthLayout from "@/layouts/AuthLayout";
 import MainLayout from "@/layouts/MainLayout";
+import Account from "@/pages/Account";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
 import MovieDetails from "@/pages/MovieDetails";
@@ -29,6 +30,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <MyList />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "account",
+        element: (
+          <ProtectedRoute>
+            <Account />
           </ProtectedRoute>
         ),
       },

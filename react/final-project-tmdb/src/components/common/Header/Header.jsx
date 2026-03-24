@@ -51,9 +51,12 @@ const Header = () => {
           {/* User Profile / Auth */}
           {isLoading ? null : user ? (
             <div className="flex items-center gap-3">
-              <span className="text-sm text-gray-300">
+              <Link
+                to="/account"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+              >
                 {user.user_metadata?.username ?? user.email}
-              </span>
+              </Link>
               <button
                 onClick={() => logout()}
                 className="cursor-pointer rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white hover:bg-white/10 transition-all"
