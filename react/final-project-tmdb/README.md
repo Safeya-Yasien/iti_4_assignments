@@ -1,28 +1,32 @@
-# React + Vite
+# 🎬 TMDBFLIX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🚀 Links
 
-Currently, two official plugins are available:
+- **Live Demo:** [final-project-tmdb.netlify.app](https://final-project-tmdb.netlify.app/)
+- **Source Code:** [GitHub Repository](https://github.com/Safeya-Yasien/iti_4_assignments/tree/main/react/final-project-tmdb)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+### 🛠️ Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**React 19** • **Vite v7** • **JavaScript** • **Tailwind CSS** • **Shadcn UI** • **React Hook Form** • **Zod** • **TanStack Query** • **React Icons** • **Axios** • **Supabase** • **TMDB API**
 
+---
 
-https://final-project-tmdb.netlify.app/
+### 🌟 Features
 
-https://github.com/Safeya-Yasien/iti_4_assignments/tree/main/react/final-project-tmdb
+- **Global Search:** Real-time movie and TV show search functionality.
+- **Authentication:** Secure Login and Registration powered by Supabase.
+- **Film Discovery:** Detailed pages for movies including cast, ratings, and recommendations.
+- **Protected Routes:** Exclusive access to Favorites and Account pages for logged-in users.
+- **My List:** Persistent favorites system synced with Supabase database.
+- **Account Dashboard:** User profile management and metadata display.
+- **Responsive Design:** Fully optimized mobile navigation and UI.
 
+---
 
+### 📦 Installation
 
-
-###### search
-
-###### toast alert instead of window alert
-###### handle protected route
-
-
-
+1. `npm install`
+2. Create `.env` with Supabase and TMDB keys.
+3. `npm run dev`
