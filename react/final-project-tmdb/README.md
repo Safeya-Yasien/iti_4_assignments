@@ -9,7 +9,18 @@
 
 ### 🛠️ Technologies
 
-**React 19** • **Vite v7** • **JavaScript** • **Tailwind CSS** • **Shadcn UI** • **React Hook Form** • **Zod** • **TanStack Query** • **React Icons** • **Axios** • **Supabase** • **TMDB API**
+- **React 19**
+- **Vite v7**
+- **JavaScript**
+- **Tailwind CSS**
+- **Shadcn UI**
+- **React Hook Form**
+- **Zod**
+- **TanStack Query**
+- **React Icons**
+- **Axios**
+- **Supabase**
+- **TMDB API**
 
 ---
 
