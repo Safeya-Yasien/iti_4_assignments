@@ -26,6 +26,7 @@ const parseJSONBody = (req) => {
 };
 
 const readTasks = () => JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
+
 const writeTasks = (tasks) =>
   fs.writeFileSync(DATA_FILE, JSON.stringify(tasks, null, 2));
 
