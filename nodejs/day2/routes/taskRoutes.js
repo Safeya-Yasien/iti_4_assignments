@@ -25,6 +25,7 @@ const handleTaskRoutes = async (req, res) => {
   }
 
   // lab4 delete task by id
+  // /tasks/ means /id for example
   else if (method === "DELETE" && url.startsWith("/tasks/")) {
     const id = Number(urlParts[2]);
     let tasks = readTasks();
