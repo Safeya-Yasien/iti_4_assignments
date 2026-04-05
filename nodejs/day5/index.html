@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <ul id="messages" style="height: 200px; overflow-y: scroll; border: 1px solid #ccc;"></ul>
+  <input id="input" /><button onclick="sendMessage()">Send</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    const list = document.getElementById('messages');
+
+    socket.on('load history', (docs) => {
+      docs.forEach(doc => addMessageToUI(doc.content + " (from history)"));
+    });
+
+    socket.on('chat message', (msg) => {
+      addMessageToUI(msg);
+    });
+
+    function sendMessage() {
+      const input = document.getElementById('input');
+      socket.emit('chat message', input.value);
+      input.value = '';
+    }
+
+    function addMessageToUI(text) {
+      const li = document.createElement('li');
+      li.textContent = text;
+      list.appendChild(li);
+    }
+  </script>
+</body>
+</html>
