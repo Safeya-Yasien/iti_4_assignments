@@ -42,6 +42,23 @@ class TaskManager {
     return [...this.tasks];
   }
 
+  completeTask(id: number): void {
+    const task = this.tasks.find((t) => t.id === id);
+    if (task) {
+      task.status = TaskStatus.Completed;
+
+      const row = document.getElementById(
+        `task-row-${id}`,
+      ) as HTMLTableRowElement;
+      if (row) {
+        row.classList.add("task-completed");
+
+        const statusCell = row.cells[2];
+        statusCell.textContent = TaskStatus.Completed;
+      }
+    }
+  }
+
   private createTableRow(task: ITask): void {
     const tableBody = document.getElementById(
       "taskTableBody",
@@ -50,15 +67,20 @@ class TaskManager {
 
     row.id = `task-row-${task.id}`;
 
+    if (task.status === TaskStatus.Completed) {
+      row.classList.add("task-completed");
+    }
+
     row.innerHTML = `
-      <td>${task.title}</td>
-      <td>${task.description}</td>
-      <td>${task.status}</td>
-      <td>${task.deadline}</td>
-      <td>
-        <button class="delete-btn" onclick="handleDeleteTask(${task.id})">Delete</button>
-      </td>
-    `;
+        <td>${task.title}</td>
+        <td>${task.description}</td>
+        <td>${task.status}</td>
+        <td>${task.deadline}</td>
+        <td>
+            <button class="done-btn" onclick="handleCompleteTask(${task.id})">Done</button>
+            <button class="delete-btn" onclick="handleDeleteTask(${task.id})">Delete</button>
+        </td>
+`;
 
     tableBody.appendChild(row);
   }
@@ -80,4 +102,8 @@ function handleAddTask() {
 
 function handleDeleteTask(id: number) {
   myManager.deleteTask(id);
+}
+
+function handleCompleteTask(id: number) {
+  myManager.completeTask(id);
 }

@@ -40,11 +40,26 @@ var TaskManager = /** @class */ (function () {
     TaskManager.prototype.getTasks = function () {
         return __spreadArray([], this.tasks, true);
     };
+    TaskManager.prototype.completeTask = function (id) {
+        var task = this.tasks.find(function (t) { return t.id === id; });
+        if (task) {
+            task.status = TaskStatus.Completed;
+            var row = document.getElementById("task-row-".concat(id));
+            if (row) {
+                row.classList.add("task-completed");
+                var statusCell = row.cells[2];
+                statusCell.textContent = TaskStatus.Completed;
+            }
+        }
+    };
     TaskManager.prototype.createTableRow = function (task) {
         var tableBody = document.getElementById("taskTableBody");
         var row = document.createElement("tr");
         row.id = "task-row-".concat(task.id);
-        row.innerHTML = "\n      <td>".concat(task.title, "</td>\n      <td>").concat(task.description, "</td>\n      <td>").concat(task.status, "</td>\n      <td>").concat(task.deadline, "</td>\n      <td>\n        <button class=\"delete-btn\" onclick=\"handleDeleteTask(").concat(task.id, ")\">Delete</button>\n      </td>\n    ");
+        if (task.status === TaskStatus.Completed) {
+            row.classList.add("task-completed");
+        }
+        row.innerHTML = "\n        <td>".concat(task.title, "</td>\n        <td>").concat(task.description, "</td>\n        <td>").concat(task.status, "</td>\n        <td>").concat(task.deadline, "</td>\n        <td>\n            <button class=\"done-btn\" onclick=\"handleCompleteTask(").concat(task.id, ")\">Done</button>\n            <button class=\"delete-btn\" onclick=\"handleDeleteTask(").concat(task.id, ")\">Delete</button>\n        </td>\n");
         tableBody.appendChild(row);
     };
     return TaskManager;
@@ -61,4 +76,7 @@ function handleAddTask() {
 }
 function handleDeleteTask(id) {
     myManager.deleteTask(id);
+}
+function handleCompleteTask(id) {
+    myManager.completeTask(id);
 }
