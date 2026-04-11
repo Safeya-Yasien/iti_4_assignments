@@ -1,19 +1,10 @@
-enum TaskStatus {
-  Pending = "Pending",
-  InProgress = "In Progress",
-  Completed = "Completed",
-}
+import { CreatedAt } from "./decorators/Logger.js";
+import { ITask, TaskStatus } from "./models/types.js";
+import { BaseRepository } from "./repositories/BaseRepository.js";
 
-interface ITask {
-  id: number;
-  title: string;
-  description: string;
-  status: TaskStatus;
-  deadline: string;
-}
-
+@CreatedAt
 class TaskManager {
-  private tasks: ITask[] = [];
+  private repo = new BaseRepository<ITask>();
 
   addTask(title: string, description: string, deadline: string): void {
     if (!title || !deadline) return;
@@ -25,12 +16,12 @@ class TaskManager {
       status: TaskStatus.Pending,
       deadline,
     };
-    this.tasks.push(newTask);
+    this.repo.add(newTask);
     this.createTableRow(newTask);
   }
 
   deleteTask(id: number): void {
-    this.tasks = this.tasks.filter((t) => t.id !== id);
+    this.repo.delete(id);
 
     const rowToRemove = document.getElementById(`task-row-${id}`);
     if (rowToRemove) {
@@ -39,11 +30,11 @@ class TaskManager {
   }
 
   getTasks(): ITask[] {
-    return [...this.tasks];
+    return [...this.repo.getAll()];
   }
 
   completeTask(id: number): void {
-    const task = this.tasks.find((t) => t.id === id);
+    const task = this.repo.findById(id);
     if (task) {
       task.status = TaskStatus.Completed;
 
@@ -88,22 +79,29 @@ class TaskManager {
 
 const myManager = new TaskManager();
 
-function handleAddTask() {
-  const titleInput = document.getElementById("titleInput") as HTMLInputElement;
-  const descInput = document.getElementById("descInput") as HTMLTextAreaElement;
-  const dateInput = document.getElementById("dateInput") as HTMLInputElement;
+const addButton = document.getElementById("add");
+if (addButton) {
+  addButton.addEventListener("click", () => {
+    const titleInput = document.getElementById(
+      "titleInput",
+    ) as HTMLInputElement;
+    const descInput = document.getElementById(
+      "descInput",
+    ) as HTMLTextAreaElement;
+    const dateInput = document.getElementById("dateInput") as HTMLInputElement;
 
-  myManager.addTask(titleInput.value, descInput.value, dateInput.value);
+    myManager.addTask(titleInput.value, descInput.value, dateInput.value);
 
-  titleInput.value = "";
-  descInput.value = "";
-  dateInput.value = "";
+    titleInput.value = "";
+    descInput.value = "";
+    dateInput.value = "";
+  });
 }
 
-function handleDeleteTask(id: number) {
+(window as any).handleDeleteTask = (id: number) => {
   myManager.deleteTask(id);
-}
+};
 
-function handleCompleteTask(id: number) {
+(window as any).handleCompleteTask = (id: number) => {
   myManager.completeTask(id);
-}
+};
