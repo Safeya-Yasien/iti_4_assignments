@@ -1,0 +1,50 @@
+<div *ngIf="movie; else notFound" class="min-h-screen text-white">
+  <div class="relative w-full h-[70vh] rounded-3xl overflow-hidden shadow-2xl border border-gray-800">
+    <img [src]="movie.image" [alt]="movie.title" class="w-full h-full object-cover">
+    
+    <div class="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-900/60 to-transparent flex flex-col justify-end p-8 md:p-16">
+      <div class="max-w-4xl">
+        <span class="bg-blue-600 px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block uppercase tracking-wider">
+          Action / Sci-Fi
+        </span>
+        <h1 class="text-5xl md:text-7xl font-black mb-4 drop-shadow-lg">
+          {{ movie.title }} <span class="text-gray-400 font-light text-3xl">({{ movie.year }})</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed mb-8">
+          {{ movie.description }}
+        </p>
+        
+        <div class="flex flex-wrap gap-4">
+          <button class="bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-gray-200 transition flex items-center gap-2">
+            <span class="text-xl">▶</span> Play Trailer
+          </button>
+          <a routerLink="/movies" class="bg-gray-800/80 backdrop-blur-sm border border-gray-700 text-white px-8 py-3 rounded-xl font-bold hover:bg-gray-700 transition">
+            Back to Catalog
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+    <div class="bg-gray-900/50 p-6 rounded-2xl border border-gray-800">
+      <h3 class="text-gray-500 uppercase text-xs font-bold tracking-widest mb-2">Director</h3>
+      <p class="text-lg font-semibold">Christopher Nolan</p>
+    </div>
+    <div class="bg-gray-900/50 p-6 rounded-2xl border border-gray-800">
+      <h3 class="text-gray-500 uppercase text-xs font-bold tracking-widest mb-2">Release Date</h3>
+      <p class="text-lg font-semibold">July 16, {{ movie.year }}</p>
+    </div>
+    <div class="bg-gray-900/50 p-6 rounded-2xl border border-gray-800">
+      <h3 class="text-gray-500 uppercase text-xs font-bold tracking-widest mb-2">Rating</h3>
+      <p class="text-lg font-semibold text-yellow-500">★★★★☆ (8.8/10)</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="flex flex-col items-center justify-center min-h-[50vh] text-center">
+    <h2 class="text-3xl font-bold text-gray-400 mb-4">Oops! Movie Not Found</h2>
+    <a routerLink="/movies" class="text-blue-500 hover:underline">Return to list</a>
+  </div>
+</ng-template>
