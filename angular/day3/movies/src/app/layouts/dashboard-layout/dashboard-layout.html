@@ -1,0 +1,25 @@
+<div class="flex h-screen bg-gray-100">
+  <aside class="w-64 bg-slate-900 text-white flex flex-col p-6">
+    <h1 class="text-2xl font-bold mb-8 text-blue-400">Admin Panel</h1>
+    <nav class="flex-1 space-y-4">
+      <a routerLink="/admin" class="block p-3 hover:bg-slate-800 rounded-lg">Dashboard</a>
+      <a routerLink="/admin/manage" class="block p-3 hover:bg-slate-800 rounded-lg"
+        >Manage Movies</a
+      >
+      <a routerLink="/" class="block p-3 text-red-400 mt-10 hover:bg-slate-800 rounded-lg italic"
+        >Exit to Website</a
+      >
+    </nav>
+  </aside>
+
+  <div class="flex-1 flex flex-col overflow-hidden">
+    <header class="h-16 bg-white shadow-sm flex items-center px-8 justify-between">
+      <span class="font-medium text-gray-600">Welcome, Safeya</span>
+      <div class="w-8 h-8 rounded-full bg-blue-600"></div>
+    </header>
+
+    <main class="flex-1 p-8 overflow-y-auto">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
