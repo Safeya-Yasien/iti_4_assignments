@@ -1,0 +1,21 @@
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">What Our Viewers Say</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div
+        *ngFor="let feedback of testimonials"
+        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 italic text-gray-600"
+      >
+        <p class="mb-6">"{{ feedback.text }}"</p>
+        <div class="flex items-center gap-4">
+          <div
+            class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600"
+          >
+            {{ feedback.user[0] }}
+          </div>
+          <span class="font-bold text-gray-900 not-italic">{{ feedback.user }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

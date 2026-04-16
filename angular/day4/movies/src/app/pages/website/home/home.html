@@ -1,0 +1,45 @@
+<div
+  class="flex flex-col items-center justify-center min-h-[60vh] text-center bg-linear-to-b from-white to-gray-50 rounded-3xl mb-16"
+>
+  <h1 class="text-5xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight">
+    Welcome to <span class="text-blue-600">MoviesApp</span>
+  </h1>
+  <p class="text-lg text-gray-600 max-w-md mb-8 leading-relaxed">
+    Discover the latest movies, explore details, and stay updated with your favorite cinema world.
+  </p>
+  <div class="flex gap-4">
+    <a
+      routerLink="/movies"
+      class="px-8 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200"
+    >
+      Explore Movies
+    </a>
+    <a
+      routerLink="/about"
+      class="px-8 py-3 border border-gray-300 rounded-xl font-bold hover:bg-gray-50 transition"
+    >
+      Learn More
+    </a>
+  </div>
+</div>
+
+<section class="mb-24">
+  <div class="flex justify-between items-end mb-10">
+    <div>
+      <h2 class="text-3xl font-bold text-gray-900">🔥 Most Popular</h2>
+      <p class="text-gray-500 mt-1">Top rated movies this week</p>
+    </div>
+    <a
+      routerLink="/movies"
+      class="text-blue-600 hover:text-blue-700 font-bold flex items-center gap-1 group"
+    >
+      View All Catalog <span class="group-hover:translate-x-1 transition-transform">→</span>
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <app-movie-card *ngFor="let m of popularMovies()" [movie]="m"></app-movie-card>
+  </div>
+</section>
+
+<app-testimonials></app-testimonials>

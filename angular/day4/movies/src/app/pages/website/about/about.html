@@ -1,0 +1,45 @@
+<section class="bg-white">
+  <div class="max-w-4xl mx-auto text-center px-4">
+    <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">Our Story</span>
+    <h1 class="text-4xl md:text-5xl font-black text-gray-900 mt-4 mb-6">
+      Redefining the way you <span class="text-blue-600">Discover Cinema</span>
+    </h1>
+    <p class="text-lg text-gray-600 leading-relaxed mb-10">
+      MoviesApp was born out of a simple passion: making film discovery seamless and beautiful. We
+      believe every movie has an audience, and our mission is to help you find your next favorite
+      story using cutting-edge technology and a user-centric design.
+    </p>
+    <img
+      src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1000"
+      alt="Cinema background"
+      class="w-full h-80 object-cover rounded-3xl shadow-2xl mb-16"
+    />
+  </div>
+
+  <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+    <div
+      *ngFor="let item of features"
+      class="p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-300"
+    >
+      <h3 class="text-xl font-bold text-gray-800 mb-3">{{ item.title }}</h3>
+      <p class="text-gray-600 text-sm leading-relaxed">{{ item.desc }}</p>
+    </div>
+  </div>
+</section>
+
+<app-testimonials></app-testimonials>
+
+<section class="py-20 text-center container mx-auto px-4">
+  <div class="bg-blue-600 rounded-3xl p-12 text-white shadow-2xl shadow-blue-200">
+    <h2 class="text-3xl font-bold mb-4">Ready to start your journey?</h2>
+    <p class="mb-8 opacity-90 max-w-xl mx-auto text-lg">
+      Join our platform today and explore the magic of the big screen from the comfort of your home.
+    </p>
+    <a
+      routerLink="/movies"
+      class="bg-white text-blue-600 px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition inline-block"
+    >
+      Get Started Now
+    </a>
+  </div>
+</section>
