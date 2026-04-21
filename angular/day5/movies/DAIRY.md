@@ -1,0 +1,3 @@
+- responsive navbar
+- responsive hero section
+-
