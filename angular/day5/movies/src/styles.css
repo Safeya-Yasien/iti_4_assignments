@@ -1,3 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-neutral-950;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-emerald-600/20 rounded-full hover:bg-emerald-600/50;
+}
