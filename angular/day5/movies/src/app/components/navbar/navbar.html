@@ -1,0 +1,77 @@
+<nav
+  class="bg-black/80 backdrop-blur-md border-b border-emerald-500/20 fixed w-full z-50 transition-all duration-300 px-6 py-4 flex items-center justify-between"
+>
+  <div class="flex items-center gap-2">
+    <div
+      class="w-10 h-10 bg-linear-to-tr from-emerald-400 to-cyan-500 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(52,211,153,0.5)]"
+    >
+      <span class="text-black font-black text-xl">C</span>
+    </div>
+    <span class="text-white font-bold text-2xl tracking-tighter hidden md:block">
+      CINE<span class="text-emerald-400">FLIX</span>
+    </span>
+  </div>
+
+  <ul class="hidden md:flex items-center gap-8 text-gray-300 font-medium">
+    <li>
+      <a
+        routerLink="/"
+        routerLinkActive="text-emerald-400"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-emerald-400 transition-colors cursor-pointer"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/movies"
+        routerLinkActive="text-emerald-400"
+        class="hover:text-emerald-400 transition-colors cursor-pointer"
+        >Movies</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/genres"
+        routerLinkActive="text-emerald-400"
+        class="hover:text-emerald-400 transition-colors cursor-pointer"
+        >Genres</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/watchlist"
+        routerLinkActive="text-emerald-400"
+        class="hover:text-emerald-400 transition-colors cursor-pointer"
+        >My List</a
+      >
+    </li>
+  </ul>
+
+  <div class="flex items-center gap-5">
+    <button class="text-gray-300 hover:text-emerald-400 transition-colors">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+        />
+      </svg>
+    </button>
+
+    <div class="w-9 h-9 rounded-full border-2 border-emerald-500/50 p-0.5 cursor-pointer">
+      <img
+        src="https://ui-avatars.com/api/?name=User&background=10b981&color=fff"
+        class="rounded-full"
+        alt="User"
+      />
+    </div>
+  </div>
+</nav>
