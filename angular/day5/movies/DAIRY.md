@@ -22,3 +22,7 @@
 ##### when refresh unstyled components appears then in 1s styles appears
 
 ##### solve tsconfig errors
+
+#### Repo:
+
+https://github.com/Safeya-Yasien/iti_4_assignments/tree/main/angular/day5/movies

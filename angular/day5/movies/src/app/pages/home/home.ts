@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Tmdb } from '../../services/tmdb';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Movie, MovieResponse } from '../../models/movie.model';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
-  trendingMovies: any[] = [];
-  popularMovies: any[] = [];
-  featuredMovie: any;
+  trendingMovies: Movie[] = [];
+  popularMovies: Movie[] = [];
+  featuredMovie: Movie | null = null;
 
   private tmdbService = inject(Tmdb);
 
@@ -23,23 +24,23 @@ export class Home implements OnInit {
   isLoading = true;
   loadData() {
     this.tmdbService.getTrendingMovies().subscribe({
-      next: (res: any) => {
+      next: (res: MovieResponse) => {
         this.trendingMovies = res.results;
         this.featuredMovie = this.trendingMovies?.[0] ?? null;
         this.isLoading = false;
       },
-      error: (err: any) => {
+      error: (err) => {
         console.error(err);
         this.isLoading = false;
       },
     });
 
     this.tmdbService.getPopularMovies().subscribe({
-      next: (res: any) => {
+      next: (res: MovieResponse) => {
         this.popularMovies = res.results;
         this.isLoading = false;
       },
-      error: (err: any) => {
+      error: (err) => {
         console.error(err);
         this.isLoading = false;
       },

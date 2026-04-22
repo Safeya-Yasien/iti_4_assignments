@@ -1,108 +1,98 @@
-<div class="min-h-screen bg-neutral-950 text-white font-sans" *ngIf="movie">
-  <div class="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
-    <img
-      [src]="'https://image.tmdb.org/t/p/original' + movie.backdrop_path"
-      class="absolute inset-0 w-full h-full object-cover"
-      [alt]="movie.title"
-    />
-    <div
-      class="absolute inset-0 bg-linear-to-r from-neutral-950 via-neutral-950/60 to-transparent"
-    ></div>
-    <div
-      class="absolute inset-0 bg-linear-to-t from-neutral-950 via-transparent to-transparent"
-    ></div>
-
-    <div class="absolute inset-0 flex flex-col justify-end pb-12 px-6 md:px-16 max-w-6xl">
-      <div class="flex flex-wrap items-center gap-3 mb-4">
-        <span class="px-2 py-1 bg-emerald-500 text-neutral-950 text-xs font-bold rounded">
-          {{ movie.status }}
-        </span>
-        <span class="text-sm font-medium text-gray-300">
-          {{ movie.release_date }} &nbsp;•&nbsp; {{ movie.runtime }} min
-        </span>
-      </div>
-
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-4 drop-shadow-lg">
-        {{ movie.title }}
-      </h1>
-
-      <p class="text-emerald-400 font-bold text-lg mb-6">
-        ★ {{ movie.vote_average }}
-        <span class="text-gray-400 font-normal text-sm ml-2">({{ movie.vote_count }} votes)</span>
-      </p>
-
-      <div class="flex flex-wrap gap-4">
-        <button
-          class="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition flex items-center gap-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M8 5v14l11-7z" />
-          </svg>
-          Play Trailer
-        </button>
-        <button
-          class="px-8 py-3 bg-neutral-800/80 backdrop-blur-md border border-white/10 font-bold rounded-full hover:bg-neutral-700 transition"
-        >
-          Add to Watchlist
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div
-    class="max-w-6xl mx-auto px-6 md:px-16 mt-12 relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 pb-20"
-  >
-    <div class="hidden md:block">
+@if (movie()) {
+  <div class="min-h-screen bg-neutral-950 text-white font-sans">
+    <div class="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
       <img
-        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
-        class="w-full rounded-2xl shadow-2xl border border-white/10"
-        [alt]="movie.title"
+        [src]="'https://image.tmdb.org/t/p/original' + movie()?.backdrop_path"
+        class="absolute inset-0 w-full h-full object-cover"
+        [alt]="movie()?.title"
       />
-
-      <div class="mt-8 space-y-6">
-        <div>
-          <h4 class="text-gray-500 uppercase text-xs font-bold tracking-widest mb-2">Genres</h4>
-          <div class="flex flex-wrap gap-2">
-            <span
-              *ngFor="let g of movie.genres"
-              class="px-3 py-1 bg-neutral-900 border border-white/5 rounded-md text-sm"
-            >
-              {{ g.name }}
-            </span>
-          </div>
+      <div class="absolute inset-0 flex flex-col justify-end pb-12 px-6 md:px-16 max-w-6xl">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="px-2 py-1 bg-emerald-500 text-neutral-950 text-xs font-bold rounded">
+            {{ movie()?.status }}
+          </span>
+          <span class="text-sm font-medium text-gray-300">
+            {{ movie()?.release_date | date: 'mediumDate' }} &nbsp;•&nbsp;
+            {{ movie()?.runtime }} min
+          </span>
         </div>
 
-        <div *ngIf="movie.budget">
-          <h4 class="text-gray-500 uppercase text-xs font-bold tracking-widest mb-1">Budget</h4>
-          <p class="text-gray-200">{{ movie.budget }}</p>
-        </div>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-4 drop-shadow-lg">
+          {{ movie()?.title }}
+        </h1>
+
+        <p class="text-emerald-400 font-bold text-lg mb-6">
+          ★ {{ movie()?.vote_average | number: '1.1-1' }}
+          <span class="text-gray-400 font-normal text-sm ml-2"
+            >({{ movie()?.vote_count }} votes)</span
+          >
+        </p>
       </div>
     </div>
 
-    <div class="md:col-span-2 space-y-10">
-      <section>
-        <h3 class="text-2xl font-bold mb-4">Overview</h3>
-        <p class="text-gray-300 text-lg leading-relaxed italic mb-4" *ngIf="movie.tagline">
-          "{{ movie.tagline }}"
-        </p>
-        <p class="text-gray-400 leading-loose">
-          {{ movie.overview }}
-        </p>
-      </section>
+    <div
+      class="max-w-6xl mx-auto px-6 md:px-16 mt-12 relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 pb-20"
+    >
+      <div class="hidden md:block">
+        <img
+          [src]="'https://image.tmdb.org/t/p/w500' + movie()?.poster_path"
+          class="w-full rounded-2xl shadow-2xl border border-white/10"
+          [alt]="movie()?.title"
+        />
 
-      <section>
-        <h3 class="text-xl font-bold mb-6">Production Companies</h3>
-        <div class="flex flex-wrap gap-8 items-center opacity-70">
-          <div *ngFor="let company of movie.production_companies">
-            <p class="text-sm font-medium">{{ company.name }}</p>
+        <div class="mt-8 space-y-6">
+          <div>
+            <h4 class="text-gray-500 uppercase text-xs font-bold tracking-widest mb-2">Genres</h4>
+            <div class="flex flex-wrap gap-2">
+              @for (g of movie()?.genres; track g.id) {
+                <span class="px-3 py-1 bg-neutral-900 border border-white/5 rounded-md text-sm">
+                  {{ g.name }}
+                </span>
+              }
+            </div>
           </div>
+
+          @if (movie()?.budget) {
+            <div>
+              <h4 class="text-gray-500 uppercase text-xs font-bold tracking-widest mb-1">Budget</h4>
+              <p class="text-gray-200">
+                {{ movie()?.budget | currency: 'USD' : 'symbol' : '1.0-0' }}
+              </p>
+            </div>
+          }
         </div>
-      </section>
+      </div>
+
+      <div class="md:col-span-2 space-y-10">
+        <section>
+          <h3 class="text-2xl font-bold mb-4">Overview</h3>
+          @if (movie()?.tagline) {
+            <p class="text-gray-300 text-lg leading-relaxed italic mb-4">
+              "{{ movie()?.tagline }}"
+            </p>
+          }
+          <p class="text-gray-400 leading-loose">
+            {{ movie()?.overview }}
+          </p>
+        </section>
+
+        <section>
+          <h3 class="text-xl font-bold mb-6">Production Companies</h3>
+          <div class="flex flex-wrap gap-8 items-center opacity-70">
+            @for (company of movie()?.production_companies; track company.id) {
+              <div>
+                <p class="text-sm font-medium">{{ company.name }}</p>
+              </div>
+            } @empty {
+              <p class="text-gray-500 text-sm italic">No production info available</p>
+            }
+          </div>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+} @else {
+  <div class="min-h-screen bg-neutral-950 flex items-center justify-center">
+    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-emerald-500"></div>
+  </div>
+}
