@@ -1,6 +1,12 @@
 <div class="">
   <h2 class="text-3xl font-bold text-white mb-6">Login</h2>
 
+  @if (errorMessage()) {
+    <div class="bg-red-500/10 border border-red-500 text-red-500 p-3 rounded-lg text-sm mb-4">
+      {{ errorMessage() }}
+    </div>
+  }
+
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-4">
     <div>
       <input
@@ -9,18 +15,13 @@
         placeholder="Email Address"
         class="w-full bg-neutral-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-emerald-500 outline-none transition-all"
       />
-      <p
-        *ngIf="isSubmitted() && loginForm.get('email')?.errors?.['required']"
-        class="text-red-500 text-xs mt-1"
-      >
-        Email is required
-      </p>
-      <p
-        *ngIf="isSubmitted() && loginForm.get('email')?.errors?.['email']"
-        class="text-red-500 text-xs mt-1"
-      >
-        Enter a valid email
-      </p>
+      @if (isSubmitted()) {
+        @if (loginForm.get('email')?.hasError('required')) {
+          <p class="text-red-500 text-xs mt-1">Email is required</p>
+        } @else if (loginForm.get('email')?.hasError('email')) {
+          <p class="text-red-500 text-xs mt-1">Enter a valid email</p>
+        }
+      }
     </div>
 
     <div>
@@ -30,18 +31,13 @@
         placeholder="Password"
         class="w-full bg-neutral-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-emerald-500 outline-none transition-all"
       />
-      <p
-        *ngIf="isSubmitted() && loginForm.get('password')?.errors?.['required']"
-        class="text-red-500 text-xs mt-1"
-      >
-        Password is required
-      </p>
-      <p
-        *ngIf="isSubmitted() && loginForm.get('password')?.errors?.['minlength']"
-        class="text-red-500 text-xs mt-1"
-      >
-        Password must be at least 6 characters
-      </p>
+      @if (isSubmitted()) {
+        @if (loginForm.get('password')?.hasError('required')) {
+          <p class="text-red-500 text-xs mt-1">Password is required</p>
+        } @else if (loginForm.get('password')?.hasError('minlength')) {
+          <p class="text-red-500 text-xs mt-1">Password must be at least 6 characters</p>
+        }
+      }
     </div>
 
     <button

@@ -49,19 +49,36 @@
         />
       </svg>
     </button>
-    <a
-      routerLink="/signup"
-      class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-5 py-2 rounded-lg transition-all text-sm"
-    >
-      Login
-    </a>
+    @if (auth.user$ | async; as user) {
+      <button
+        (click)="auth.logout()"
+        class="bg-red-500/20 border border-red-500/50 text-red-500 hover:bg-red-500 hover:text-white font-bold px-5 py-2 rounded-lg transition-all text-sm cursor-pointer"
+      >
+        Logout
+      </button>
 
-    <div class="w-9 h-9 rounded-full border-2 border-emerald-500/50 p-0.5 cursor-pointer">
-      <img
-        src="https://ui-avatars.com/api/?name=User&background=10b981&color=fff"
-        class="rounded-full"
-        alt="User"
-      />
-    </div>
+      <div
+        class="w-9 h-9 rounded-full border-2 border-emerald-500/50 p-0.5 cursor-pointer"
+        [title]="user.displayName || user.email"
+      >
+        <img
+          [src]="
+            user.photoURL ||
+            'https://ui-avatars.com/api/?name=' +
+              (user.displayName || 'User') +
+              '&background=10b981&color=fff'
+          "
+          class="rounded-full w-full h-full object-cover"
+          alt="User"
+        />
+      </div>
+    } @else {
+      <a
+        routerLink="/login"
+        class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-5 py-2 rounded-lg transition-all text-sm"
+      >
+        Login
+      </a>
+    }
   </div>
 </nav>
