@@ -1,4 +1,4 @@
-<div class="max-w-md mx-auto mt-20 p-8 bg-neutral-900 rounded-2xl border border-white/5 shadow-2xl">
+<div class="">
   <h2 class="text-3xl font-bold text-white mb-6">Create Account</h2>
 
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-4">
@@ -23,6 +23,13 @@
         placeholder="Email Address"
         class="w-full bg-neutral-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-emerald-500 outline-none transition-all"
       />
+
+      <p
+        *ngIf="isSubmitted() && registerForm.get('email')?.errors?.['required']"
+        class="text-red-500 text-xs mt-1"
+      >
+        Email is required
+      </p>
       <p
         *ngIf="isSubmitted() && registerForm.get('email')?.errors?.['email']"
         class="text-red-500 text-xs mt-1"
@@ -38,6 +45,18 @@
         placeholder="Password"
         class="w-full bg-neutral-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-emerald-500 outline-none transition-all"
       />
+      <p
+        *ngIf="isSubmitted() && registerForm.get('password')?.errors?.['required']"
+        class="text-red-500 text-xs mt-1"
+      >
+        Password is required
+      </p>
+      <p
+        *ngIf="isSubmitted() && registerForm.get('password')?.errors?.['minlength']"
+        class="text-red-500 text-xs mt-1"
+      >
+        Password must be at least 6 characters
+      </p>
     </div>
 
     <div>
@@ -48,6 +67,12 @@
         class="w-full bg-neutral-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-emerald-500 outline-none transition-all"
       />
       <p
+        *ngIf="isSubmitted() && registerForm.get('confirmPassword')?.errors?.['required']"
+        class="text-red-500 text-xs mt-1"
+      >
+        Please confirm your password
+      </p>
+      <p
         *ngIf="isSubmitted() && registerForm.hasError('mismatch')"
         class="text-red-500 text-xs mt-1"
       >
@@ -57,9 +82,19 @@
 
     <button
       type="submit"
-      class="w-full bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold py-3 rounded-lg transition-all"
+      class="cursor-pointer w-full bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold py-3 rounded-lg transition-all"
     >
-      Register Now
+      Get Started
     </button>
+    <div class="text-center pt-4">
+      <p class="text-gray-500 text-xs">
+        Already have an account?
+        <a
+          routerLink="/login"
+          class="text-emerald-400 hover:text-emerald-300 font-bold ml-1 transition-colors"
+          >Sign In</a
+        >
+      </p>
+    </div>
   </form>
 </div>
