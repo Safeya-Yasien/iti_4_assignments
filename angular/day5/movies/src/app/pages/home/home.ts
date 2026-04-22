@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Tmdb } from '../../services/tmdb';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

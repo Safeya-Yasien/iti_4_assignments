@@ -19,4 +19,8 @@ export class Tmdb {
   getPopularMovies(): Observable<any> {
     return this.http.get(`${this.baseUrl}/movie/popular?api_key=${this.apiKey}`);
   }
+
+  getMovieDetails(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`);
+  }
 }
