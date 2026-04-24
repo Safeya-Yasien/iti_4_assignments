@@ -3,6 +3,7 @@
 - make navbar bg transparent when scrolling
 - make card link to movie details page
 - enahnce skeleton in home page
+- protected route
 
 ##### It's best to make all sections in home page or make them in a separate components
 
