@@ -1,0 +1,17 @@
+node_modules
+
+# build the img
+# t means to change the name
+# node-app image name
+docker build -t node-app:v1 .
+
+
+# check if the image is already build
+docker images
+
+# right port opend in brwoser
+# left port which is runing in the container
+docker run -p 8080:8080 node-app:v1
+
+
+ http://localhost:8080
